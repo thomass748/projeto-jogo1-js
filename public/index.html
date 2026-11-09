@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Jogo Multiplayer</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>O Jogo está online!</h1>
+    <p>Abra o console do navegador (F12) para ver a conexão.</p>
+
+    <!-- Importa o Socket.io no navegador do jogador -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Conecta ao servidor
+        const socket = io();
+        
+        socket.on('connect', () => {
+            console.log("Conectado ao servidor com sucesso!");
+        });
+    </script>
+</body>
+</html>
